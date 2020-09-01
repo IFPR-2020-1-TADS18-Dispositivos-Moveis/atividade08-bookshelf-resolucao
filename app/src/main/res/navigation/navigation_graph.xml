@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/bookListFragmentContainer">
+
+    <fragment
+        android:id="@+id/bookListFragmentContainer"
+        android:name="com.stiehl.bookshelf.fragments.BookListFragment"
+        android:label="fragment_book_list"
+        tools:layout="@layout/fragment_book_list" >
+        <action
+            android:id="@+id/navigateToBookFragment"
+            app:destination="@id/bookFragmentContainer" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragmentContainer"
+        android:name="com.stiehl.bookshelf.fragments.BookFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_book" >
+        <argument
+            android:name="book"
+            app:argType="com.stiehl.bookshelf.model.Book" />
+    </fragment>
+</navigation>
